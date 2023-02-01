@@ -33,7 +33,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
+Route::get('/register', function () {
+    return view('register');
+});
 Route::group(['middleware' => ['auth', 'checkRole:Super']], function () {
     Route::resource('user', UserController::class);
 });
@@ -79,6 +81,7 @@ Route::group(['middleware' => ['auth', 'checkRole:Super,Admin,Customer']], funct
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
     Route::get('/mark-all-as-read', [NotificationsController::class, 'markAllAsRead'])->name('notification.markAllAsRead');
 

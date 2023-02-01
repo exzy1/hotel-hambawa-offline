@@ -81,6 +81,7 @@
                                             </div>
                                         </button>
                                     </div>
+                                 <a href="/register">Register</a>   
                                 </div>
                             </div>
                             <hr class="my-4">
